@@ -1,0 +1,5 @@
+spring:
+  application:    name: servicio-productos
+  banner:    location: classpath:/message/banner.txt
+server:
+  port: 8001
