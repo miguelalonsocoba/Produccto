@@ -2,6 +2,8 @@ package com.formacionbdi.springboot.app.productos.controllers;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,11 @@ import com.formacionbdi.springboot.app.productos.models.service.IProductoService
  */
 @RestController
 public class ProductoController {
+	
+	/**
+	 * Variable LOG.
+	 */
+	private static final Log LOG = LogFactory.getLog(ProductoController.class);
 
 	/**
 	 * Parameter. Inyeccion de dependencia. productoService.
@@ -27,11 +34,13 @@ public class ProductoController {
 
 	@GetMapping("/listar")
 	public List<Producto> listar() {
+		LOG.info("Method listar().");
 		return productoService.findAll();
 	}
 
 	@GetMapping("/ver/{id}")
 	public Producto detalle(@PathVariable Long id) {
+		LOG.info("Method detalle(). Parameter-Value: " + id);
 		return productoService.findById(id);
 	}
 
