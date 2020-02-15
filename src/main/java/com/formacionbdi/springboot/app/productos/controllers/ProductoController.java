@@ -21,7 +21,7 @@ import com.formacionbdi.springboot.app.productos.models.service.IProductoService
 public class ProductoController {
 	
 	/**
-	 * Variable LOG.
+	 * Variable Log.
 	 */
 	private static final Log LOG = LogFactory.getLog(ProductoController.class);
 
