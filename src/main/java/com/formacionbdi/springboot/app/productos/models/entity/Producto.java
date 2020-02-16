@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -50,6 +51,13 @@ public class Producto implements Serializable {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
+	
+	/**
+	 * Parameter port.
+	 * Transient: Indica que este campo no es persistente, y no esta mapeado a ningun campo.
+	 */
+	@Transient
+	private Integer port;
 
 	/**
 	 * Atributo 'serialVersionUID'.
