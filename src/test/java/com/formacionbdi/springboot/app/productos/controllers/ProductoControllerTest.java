@@ -48,9 +48,10 @@ public class ProductoControllerTest {
 	
 	/**
 	 * Test ver Ok.
+	 * @throws Exception 
 	 */
 	@Test
-	public void okTestVer() {
+	public void okTestVer() throws Exception {
 		when(productoService.findById(ArgumentMatchers.anyLong())).thenReturn(new Producto());
 		
 		Producto producto = controller.detalle(1L);
