@@ -23,5 +23,18 @@ public interface IProductoService {
 	 * @return Object Producto
 	 */
 	public Producto findById(Long id);
+	
+	/**
+	 * Method save one Producto.
+	 * @param producto
+	 * @return Producto
+	 */
+	public Producto save(Producto producto);
+	
+	/**
+	 * Method delete by id
+	 * @param id
+	 */
+	public void deleteById(Long id);
 
 }

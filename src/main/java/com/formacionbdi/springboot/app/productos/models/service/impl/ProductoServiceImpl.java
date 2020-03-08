@@ -49,4 +49,27 @@ public class ProductoServiceImpl implements IProductoService {
 		return productoDao.findById(id).orElse(null);
 	}
 
+	@Override
+	@Transactional
+	public Producto save(Producto producto) {
+		LOG.info("Method: save(). Parameter-Value: " + producto.toString());
+		
+		Producto p = new Producto();
+		
+		try {
+			p = productoDao.save(producto);
+		} catch (IllegalArgumentException e) {
+			LOG.error("Error: " + e.getMessage());
+		}
+		
+		return p;
+	}
+
+	@Override
+	@Transactional
+	public void deleteById(Long id) {
+		LOG.info("Method: deleteById(). Parameter- Value: " + id);
+		productoDao.deleteById(id);
+	}
+
 }
