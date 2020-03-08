@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.formacionbdi.springboot.app.commons.models.entity.Producto;
 import com.formacionbdi.springboot.app.productos.models.dao.IProductoDao;
-import com.formacionbdi.springboot.app.productos.models.entity.Producto;
 import com.formacionbdi.springboot.app.productos.models.service.IProductoService;
 
 /**
@@ -53,15 +53,15 @@ public class ProductoServiceImpl implements IProductoService {
 	@Transactional
 	public Producto save(Producto producto) {
 		LOG.info("Method: save(). Parameter-Value: " + producto.toString());
-		
+
 		Producto p = new Producto();
-		
+
 		try {
 			p = productoDao.save(producto);
 		} catch (IllegalArgumentException e) {
 			LOG.error("Error: " + e.getMessage());
 		}
-		
+
 		return p;
 	}
 
