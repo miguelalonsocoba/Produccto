@@ -1,5 +1,6 @@
 spring:
   application:    name: servicio-productos
+#    Agregando Banner.
   banner:    location: classpath:/message/banner.txt
     
 #   Configuración para la Base de Datos.
