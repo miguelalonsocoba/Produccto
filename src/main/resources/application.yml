@@ -3,22 +3,6 @@ spring:
 #    Agregando Banner.
   banner:    location: classpath:/message/banner.txt
     
-#   Configuración para la Base de Datos.
-  datasource:
-    url: jdbc:mysql://localhost:3306/db_springboot_cloud?serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true&useSSL=false
-    username: root
-    password: m932006ac
-    driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect    hibernate:      ddl-auto: create
-
-#  Muestra en los logs los querys realizados en la base de datos.
-logging:
-  level:
-    org: 
-      hibernate:
-        SQL: debug
-    
 #    Configuración del puerto.
 server:
   port: ${PORT:0}
